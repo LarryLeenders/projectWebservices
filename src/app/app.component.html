@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center" class="container-fluid">
+  <!--Onderliggende structuur mag enkel getoond worden als de gebruiker ingelogd is-->
+  <div id="selectors">
+    <form>
+      <input type="radio" name="select" value="jobs" checked="checked" (click)="setActive('jobs')">
+      <input type="radio" name="select" value="contacts" (click)="setActive('contacts')">
+    </form>
+  </div>
+  <app-contact-overview [hidden]="jobsActive"></app-contact-overview>
+  <app-job-overview [hidden]="!jobsActive"></app-job-overview>
+  <!--tot hier-->
+<!--
+  <app-job-card></app-job-card>
+  <app-contact-card></app-contact-card>
+  -->
+</div>
