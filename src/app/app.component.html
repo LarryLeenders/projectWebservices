@@ -1,16 +1,17 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center" class="container-fluid">
-  <!--Onderliggende structuur mag enkel getoond worden als de gebruiker ingelogd is-->
-  <div id="selectors">
-    <form>
-      <input type="radio" name="select" value="jobs" checked="checked" (click)="setActive('jobs')">
-      <input type="radio" name="select" value="contacts" (click)="setActive('contacts')">
-    </form>
+  <div id="selectors" class="navbar navbar-default">
+    <ul class="nav nav-tabs ">
+      <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
+        <!--onderliggenden mogen enkel getoond worden als gebruiker ingelogd is-->
+      <li role="presentation" routerLinkActive="active"><a routerLink='/jobs'>Jobs</a></li>
+      <li role="presentation" routerLinkActive="active"><a routerLink='/contacts'>Contacts</a></li>
+      <!--mag enkel getoond worden als gebruiker niet ingelogd is-->
+      <li role="presentation" routerLinkActive="active"><a routerLink='/login'>Login</a></li>
+    </ul>
   </div>
-  <app-contact-overview [hidden]="jobsActive"></app-contact-overview>
-  <app-job-overview [hidden]="!jobsActive"></app-job-overview>
-  <!--tot hier-->
+  <router-outlet></router-outlet>
 <!--
+  debug/test subitems
   <app-job-card></app-job-card>
   <app-contact-card></app-contact-card>
   -->
