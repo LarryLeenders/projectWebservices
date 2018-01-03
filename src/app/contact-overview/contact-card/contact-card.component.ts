@@ -8,7 +8,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class ContactCardComponent implements OnInit {
 
-@Input() contact : {title: string, name: string, forComp: string, companyIdentifier: number, jobIdentifier: number};
+@Input() contact : {title: string, name: string, forComp: string, companyIdentifier: number, jobIdentifier: number, companyname: string};
 
   constructor(private http: HttpClient) { }
 
