@@ -1,8 +1,8 @@
-<div>
+<div style="border:1px solid #cecece;" [hidden]="hidden">
   <!--image misschien-->
-  <h3 #titel>titel</h3>
-  <h4 #locatie>locatie</h4>
-  <p #omschrijving>omschrijving</p>
+  <h3>{{titel}}</h3>
+  <h4>{{locatie}}</h4>
+  <p >{{omschrijving}}</p>
   <div>
     <button name="not interested" class="btn btn-danger" (click)="dismiss()">not interested</button>
     <button name="interested" class="btn btn-success" (click)="save()">interested</button>

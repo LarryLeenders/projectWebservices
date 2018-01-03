@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule} from "@angular/forms";
 
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
@@ -10,12 +11,15 @@ import { ContactCardComponent } from './contact-overview/contact-card/contact-ca
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './home/home.component';
+import { CrudComponent } from './crud/crud.component';
+
 
 const appRoutes : Routes = [
     {path: '', component:HomeComponent},
     {path: 'jobs', component:JobOverviewComponent},
     {path: 'contacts', component:ContactOverviewComponent},
     {path: 'login', component:LoginComponent},
+    {path: 'crud', component:CrudComponent},
     {path: '*', component:HomeComponent}
 ];
 
@@ -28,12 +32,14 @@ const appRoutes : Routes = [
     JobCardComponent,
     ContactCardComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

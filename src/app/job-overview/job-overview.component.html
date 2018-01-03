@@ -1,6 +1,6 @@
 <div>
   <app-job-card
-    *ngFor="let job of jobs; index as i">
+    *ngFor="let job of jobs; index as i" [omschrijving]="job.description" [titel]="job.title" [locatie]="job.companyname" [identifier]="job.identifier">
   </app-job-card>
 </div>
-<p>DIT WERKT</p>
+

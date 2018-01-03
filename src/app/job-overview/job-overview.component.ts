@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {JobDataService} from "../job-data.service";
 
 @Component({
   selector: 'app-job-overview',
@@ -6,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./job-overview.component.css']
 })
 export class JobOverviewComponent implements OnInit {
+  jobs = [];
 
-  constructor() { }
+  constructor(private dataservice: JobDataService) { }
 
   ngOnInit() {
+      this.jobs = this.dataservice.getJobs();
   }
 
-  jobs = []; //inlezen uit databank
 }

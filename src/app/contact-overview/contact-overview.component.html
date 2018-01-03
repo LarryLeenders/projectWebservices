@@ -1,6 +1,7 @@
 <div>
   <app-contact-card
-    *ngFor="let contact of contacts; index as i">
+    *ngFor="let contact of contacts; index as i" [contact]="contact">
   </app-contact-card>
+ <!--onderstaande regel toont wel de titels van alle contacts
+  <p *ngFor="let contact of contacts">{{contact.title}}@{{contact.forComp}}</p>-->
 </div>
-<p>DIT WERKT ook</p>

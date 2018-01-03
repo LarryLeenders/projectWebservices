@@ -1,0 +1,41 @@
+<div>
+  <form [hidden]="!displayAddForm">
+    <div class="form-group">
+      <label for="jobTitle">Title:</label><input type="text" id="jobTitle" [(ngModel)]="toAddTitle" [ngModelOptions]="{standalone: true}"><br/>
+    </div>
+    <div class="form-group">
+      <label for="jobDescription">Description:</label><input type="text" id="jobDescription" [(ngModel)]="toAddDescription" [ngModelOptions]="{standalone: true}"><br/>
+    </div>
+    <div class="form-group">
+      <label for="jobCompID">CompanyID:</label><input type="number" min="1" max="{{maxIDcomp}}" id="jobCompID" [(ngModel)]="toAddCompID" [ngModelOptions]="{standalone: true}"><br/>
+    </div>
+    <div class="form-group">
+      <label for="jobContactID">ContactID:</label><input type="number" min="1" max="{{maxIDcont}}" id="jobContactID" [(ngModel)]="toAddContID" [ngModelOptions]="{standalone: true}"><br/>
+    </div>
+  </form>
+  <button class="btn-info" (click)="add()">Add new Job</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Job title</th>
+        <th scope="col">Job Description</th>
+        <th scope="col">CompanyID</th>
+        <th scope="col">ContactID</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let job of allJobs; index as i">
+        <th scope="row">{{allJobs[i].jobID}}</th>
+        <td><input type="text" [(ngModel)]="allJobs[i].title" ></td>
+        <td><input type="text" [(ngModel)]="allJobs[i].description"/></td>
+        <td><input type="number" min="1" max="{{maxIDcomp}}" [(ngModel)]="allJobs[i].compidentifier"/></td>
+        <td><input type="number" min="1" max="{{maxIDcont}}" [(ngModel)]="allJobs[i].contactidentifier"/></td>
+        <td><button class="btn-warning" (click)="update(allJobs[i].jobID, i)">Update</button></td>
+        <td><button class="btn-danger" (click)="delete(allJobs[i].jobID)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
